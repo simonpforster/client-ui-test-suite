@@ -8,20 +8,24 @@ package uk.gov.hmrc.test.ui.cucumber.stepdefs
 import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.pages.{ExamplePage, PayOnlinePage}
 
-class ExampleStepDef extends BaseStepDef {
+class GoogleStepDefTest extends BaseStepDef {
+  Given("I Am At Google") { () =>
+    driver.navigate().to("https://www.google.com/")
+    eventually {
+      driver.getTitle should be("Google")
+    }
+  }
 
-//  Given("a user logs in to access payments page") { () =>
-//    driver.navigate().to(ExamplePage.url)
-//
-//    driver.findElement(By.name("redirectionUrl")).clear()
-//    driver.findElement(By.name("redirectionUrl")).sendKeys(PayOnlinePage.url)
-//    driver.findElement(By.cssSelector("Input[value='Submit']")).click()
-//
-//    eventually {
-//      driver.getTitle should be(PayOnlinePage.title)
-//    }
-//  }
-//
+  When("I am there") { () =>
+    eventually{
+      driver.getTitle should be("Google")
+    }
+  }
+  Then("I SHOULD DEFINATELY BE THERE") { () =>
+    eventually{
+      driver.getTitle should be("Google")
+    }
+  }
 //  Given("a user navigates to payments page") { () =>
 //    driver.navigate().to(PayOnlinePage.url)
 //  }
@@ -37,5 +41,4 @@ class ExampleStepDef extends BaseStepDef {
 //      driver.getTitle should be("Choose a way to pay - Pay your VAT - GOV.UK")
 //    }
 //  }
-
 }
