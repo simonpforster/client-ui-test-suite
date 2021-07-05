@@ -14,7 +14,6 @@ object BusinessTypePage extends BasePage {
 
   def selectType(): Unit = {
     businessTypeButton.click()
-    submit()
   }
 
 

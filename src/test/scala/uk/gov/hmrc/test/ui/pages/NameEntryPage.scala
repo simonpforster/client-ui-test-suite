@@ -12,8 +12,7 @@ object NameEntryPage extends BasePage {
 
   def nameInput: WebElement = driver.findElement(By.id("name"))
 
-  def enterName():Unit = {
+  def enterName(): Unit = {
     nameInput.sendKeys(testName)
-    submit()
   }
 }

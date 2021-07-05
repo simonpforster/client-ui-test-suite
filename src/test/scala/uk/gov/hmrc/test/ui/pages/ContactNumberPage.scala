@@ -12,8 +12,7 @@ object ContactNumberPage extends BasePage {
 
   def numberInput: WebElement = driver.findElement(By.id("contact-number"))
 
-  def enterNumber():Unit = {
+  def enterNumber(): Unit = {
     numberInput.sendKeys(testNumber)
-    submit()
   }
 }

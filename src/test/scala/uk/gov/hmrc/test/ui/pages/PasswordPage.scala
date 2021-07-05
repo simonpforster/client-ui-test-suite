@@ -14,6 +14,5 @@ object PasswordPage extends BasePage {
 
   def enterPassword(): Unit = {
     passwordInput.sendKeys(testPassword)
-    submit()
   }
 }

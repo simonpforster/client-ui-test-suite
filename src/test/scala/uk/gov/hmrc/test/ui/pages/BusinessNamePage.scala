@@ -10,10 +10,9 @@ import org.openqa.selenium.{By, WebElement}
 object BusinessNamePage extends BasePage {
   val title: String = "Enter Business Name"
 
-  def nameInput: WebElement = driver.findElement(By.id("business-name"))
+  def businessNameInput: WebElement = driver.findElement(By.id("business-name"))
 
-  def enterName():Unit = {
-    nameInput.sendKeys(testName)
-    submit()
+  def enterBusinessName(): Unit = {
+    businessNameInput.sendKeys(testBusinessName)
   }
 }

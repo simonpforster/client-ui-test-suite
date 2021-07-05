@@ -15,14 +15,13 @@ trait BasePage extends Matchers with BrowserDriver {
 
   def submitButton: WebElement = driver.findElement(By.id("submit"))
 
-  val testName: String = "testName"
-  val testBusinessName: String = "testName"
+  val testName: String = "AtestName"
+  val testBusinessName: String = "BusinessName"
   val testNumber: String = "testNumber"
   val testPropertyNo: String = "5"
   val testPostcode: String = "testPostcode"
-  val businessType: String = "Sole Trader"
+  val businessType: String = "Other"
   val testPassword: String = "testPass"
-
 
   def goHere(): Unit = {
     driver.navigate().to(url)

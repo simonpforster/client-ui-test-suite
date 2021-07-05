@@ -12,6 +12,7 @@ object LoginPage extends BasePage {
   var testCRN: String = "testCRN"
 
   def crnField: WebElement = driver.findElement(By.id("crn"))
+
   def passwordField: WebElement = driver.findElement(By.id("password"))
 
   def login(): Unit = {
@@ -23,6 +24,7 @@ object LoginPage extends BasePage {
   def enterCRN(): Unit = {
     crnField.sendKeys(testCRN)
   }
+
   def enterPassword(): Unit = {
     passwordField.sendKeys(testPassword)
   }
