@@ -5,7 +5,7 @@
 
 package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
-import uk.gov.hmrc.test.ui.pages.{HomePage, LoginPage}
+import uk.gov.hmrc.test.ui.pages.{AddressPage, ApplicationCompletePage, BusinessNamePage, BusinessTypePage, ContactNumberPage, HomePage, LoginPage, NameEntryPage, PasswordPage, SummaryPage}
 
 class UserPathStepDef extends BaseStepDef {
 
@@ -29,10 +29,73 @@ class UserPathStepDef extends BaseStepDef {
     }
   }
 
-  When("I Then register") { () =>
+  When("I click register") { () =>
+    eventually{
+      HomePage.startRegister()
+    }
+    eventually {
+      NameEntryPage.checkTitle() shouldBe true
+    }
   }
-  When("I logout and login") { () =>
-    //pass crn from register page
+  When("I enter my name") { () =>
+    eventually {
+      NameEntryPage.enterName()
+    }
+    eventually {
+     BusinessNamePage.checkTitle() shouldBe true
+    }
   }
-  Then("My Account has been deleted")
+  When("I enter my business name") { () =>
+    eventually {
+      BusinessNamePage.enterName()
+    }
+    eventually {
+      ContactNumberPage.checkTitle() shouldBe true
+    }
+  }
+  When("I enter my contact number") { () =>
+    eventually {
+      ContactNumberPage.enterNumber()
+    }
+    eventually {
+      AddressPage.checkTitle() shouldBe true
+    }
+  }
+  When("I enter my address") { () =>
+    eventually {
+      AddressPage.enterDetails()
+    }
+    eventually {
+      BusinessTypePage.checkTitle() shouldBe true
+    }
+  }
+  When("I select my business type") { () =>
+    eventually {
+      BusinessTypePage.selectType()
+    }
+    eventually {
+      PasswordPage.checkTitle() shouldBe true
+    }
+  }
+  When("I enter my password") { () =>
+    eventually {
+      PasswordPage.enterPassword()
+    }
+    eventually {
+      SummaryPage.checkTitle() shouldBe true
+    }
+  }
+  When("I submit the data") { () =>
+    eventually {
+      SummaryPage.checkName shouldBe true
+      SummaryPage.checkBusinessName shouldBe true
+      SummaryPage.checkContactNumber shouldBe true
+      SummaryPage.checkProperty shouldBe true
+      SummaryPage.checkBusinessType shouldBe true
+      SummaryPage.submit()
+    }
+    eventually{
+      LoginPage.testCRN = ApplicationCompletePage.getCRN
+    }
+  }
 }
