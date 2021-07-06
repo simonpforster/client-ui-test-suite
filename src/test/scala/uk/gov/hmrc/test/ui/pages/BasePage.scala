@@ -22,6 +22,7 @@ trait BasePage extends Matchers with BrowserDriver {
   val testPostcode: String = "testPostcode"
   val businessType: String = "Other"
   val testPassword: String = "testPass"
+  val testARN: String = "ARNTEST"
 
   def goHere(): Unit = {
     driver.navigate().to(url)

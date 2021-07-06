@@ -17,6 +17,9 @@ Feature: UserPath journey tests
     When I select my business type
     When I enter my password
     When I submit the data
+    When I am on the dashboard and enter the wrong ARN
+    When I am on the dashboard and enter the correct ARN
+    When I Have an arn and remove it
     When I am on the dashboard and I can logout
     When I login
     When I delete my account
