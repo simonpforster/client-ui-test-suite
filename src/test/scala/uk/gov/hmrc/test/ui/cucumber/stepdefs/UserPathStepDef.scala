@@ -79,9 +79,29 @@ class UserPathStepDef extends BaseStepDef {
       ApplicationCompletePage.submit()
     }
   }
-  When("I am on the dashboard and I can logout") { () =>
+  When("I am on the dashboard and enter the wrong ARN") { () =>
     eventually {
       DashboardPage.checkTitle() shouldBe true
+      DashboardPage.enterIncorrectARN()
+      DashboardPage.submit()
+    }
+  }
+  When("I am on the dashboard and enter the correct ARN") { () =>
+    eventually {
+      DashboardPage.checkError() shouldBe true
+      DashboardPage.enterARN()
+      DashboardPage.submit()
+    }
+  }
+  When("I Have an arn and remove it") { () =>
+    eventually {
+      DashboardPage.checkArnExists() shouldBe true
+      DashboardPage.removeArn()
+    }
+  }
+  When("I am on the dashboard and I can logout") { () =>
+    eventually {
+      DashboardPage.checkAddButtonExists shouldBe true
       DashboardPage.logoutButton
       DashboardPage.logout()
       LogoutSuccessfulPage.checkTitle() shouldBe true
