@@ -12,7 +12,10 @@ object PasswordPage extends BasePage {
 
   def passwordInput: WebElement = driver.findElement(By.id("password"))
 
+  def passwordCheckInput: WebElement = driver.findElement(By.id("passwordCheck"))
+
   def enterPassword(): Unit = {
     passwordInput.sendKeys(testPassword)
+    passwordCheckInput.sendKeys(testPassword)
   }
 }

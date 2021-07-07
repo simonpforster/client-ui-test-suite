@@ -10,7 +10,7 @@ import org.openqa.selenium.{By, WebElement}
 object BusinessTypePage extends BasePage {
   val title: String = "Select Business Type"
 
-  def businessTypeButton: WebElement = driver.findElement(By.id("business-other"))
+  def businessTypeButton: WebElement = driver.findElement(By.id("business-private-limited"))
 
   def selectType(): Unit = {
     businessTypeButton.click()
