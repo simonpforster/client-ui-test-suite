@@ -17,7 +17,7 @@ trait BasePage extends Matchers with BrowserDriver {
 
   val testName: String = "AtestName"
   val testBusinessName: String = "BusinessName"
-  val testNumber: String = "testNumber"
+  val testNumber: String = "07777777777"
   val testPropertyNo: String = "5"
   val testPostcode: String = "testPostcode"
   val businessType: String = "Other"
